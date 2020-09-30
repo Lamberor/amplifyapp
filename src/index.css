@@ -1,0 +1,39 @@
+@import '~antd/dist/antd.css';
+@import './styles/ObserverInfo.css';
+@import './styles/SatelliteList.css';
+@import './styles/WorldMap.css';
+
+.App-logo {
+  height: 60px;
+  padding-left: 30px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ant-layout-header {
+  background: #7dbcea;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  color: #1f6099;
+  box-shadow: rgb(220, 220, 220) 0 2px 10px;
+}
+
+.ant-layout-footer {
+  position: fixed;
+  text-align: center;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #7dbcea;
+  color: #fff;
+}
+
+.ant-layout-content {
+  background:#fff;
+  min-height: 120px;
+}
