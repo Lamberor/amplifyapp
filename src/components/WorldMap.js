@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createRef, useState } from "react";
 import {
   Geographies,
   Geography,
@@ -70,18 +70,20 @@ const WorldMap = ({
     
     setCurrentTimestamp(new Date(data[0].positions[index].timestamp * 1000).toString());
     updateMarker(data, index);
-    const timerId =  setInterval(() => {
+    const timerId = setInterval(() => {
       index += 60;
       setProgressPercentage((index / end) * 100);
-      updateMarker(data, index);
-      setCurrentTimestamp(new Date(data[0].positions[index].timestamp * 1000).toString());
 
       if (index >= end) {
         setProgressText(progressStatus.Complete);
         setTimerId(undefined);
         onTracking(false);
         clearInterval(timerId);
+        return;
       }
+
+      updateMarker(data, index);
+      setCurrentTimestamp(new Date(data[0].positions[index].timestamp * 1000).toString());
 
     }, 1000);
 
